@@ -56,7 +56,7 @@ I provide a few scritp to help decompiling/recompiling a firmware.
 
 Start from the last available firmware: "pono_1.0.6.update"
 
-    ./decompile.sh pono_1.0.6.update
+    ./decompile.sh ./firmware/pono_1.0.6.update
 
 This will create a ./decompiled/ folder with the firmware contents.
 
@@ -67,4 +67,11 @@ Use the compile.sh script:
     ./compile.sh pono_1.0.6.update
 
 This will re-package and sign the ./decompiled/ folder.
+Note: you don't need to change the firmware version number.
 
+### Deploying
+
+Copy the updated OTA package to the ".pono/" folder of your PonoPlayer.
+Disconnect you device, the player will propose to update to version 1.0.6 (actally it's already in 1.0.6 but well ...), press Ok.
+
+If the progress bar is stucked, don't worry. The upgrade failed but you can still reconnect your device and load a new OTA package.

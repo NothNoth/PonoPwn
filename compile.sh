@@ -15,7 +15,9 @@ rm -f decompiled/original/META-INF/MANIFEST.MF
 
 apktool b -c -f decompiled/ -o $pkg.repacked
 
-java -jar signapk-1.0.jar -w 2.3.6-testkeys/testkey.x509.pem 2.3.6-testkeys/testkey.pk8 $pkg.repacked $pkg.repacked.signed
+echo "Signing..."
+java -jar signapk-1.0.jar -w 2.3.6-testkeys/testkey.x509.pem 2.3.6-testkeys/testkey.pk8 ${pkg}.repacked ${pkg}.repacked.signed
 mv $pkg.repacked.signed $pkg
 
 rm -f $pkg.repacked
+echo "Updated OTA package ready: $pkg"
